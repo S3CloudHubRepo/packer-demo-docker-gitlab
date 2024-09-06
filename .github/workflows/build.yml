@@ -35,9 +35,9 @@ jobs:
         echo "${{ secrets.GITLAB_PASSWORD }}" | docker login -u "${{ secrets.GITLAB_USERNAME }}" --password-stdin registry.gitlab.com
 
     - name: Build and Push Docker Image
-      run: |
-        docker push registry.gitlab.com/${{ secrets.GITLAB_PROJECT_ID }}/my-docker-image:latest
-        docker push registry.gitlab.com/${{ secrets.GITLAB_PROJECT_ID }}/my-docker-image:v1.0.0
+      run: |  
+        docker push registry.gitlab.com/s3cloudhub2/docker-example:latest
+        docker push registry.gitlab.com/s3cloudhub2/docker-example:v1.0.0
 
     - name: Logout from GitLab
       run: docker logout registry.gitlab.com
